@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Analisis de mensaje de texto
+    </h1>
+    <textarea id="parrafo"></textarea>
+    <br>
+    <button onclick="analizador()">contar</button>
+    <script>
+        function analizador(){
+            let parrafo=document.getElementById("parrafo").value.toLowerCase();
+            let caracteres= parrafo ? parrafo.length : 0;
+
+            let palabras = parrafo.match(/\b\w+\b/g);
+            let can_pal = palabras ? palabras.length : 0;
+
+            let oraciones = parrafo.match(/[^.!?]*[.!?]/g);
+            let can_ora = oraciones ? oraciones.length : 0;
+
+            alert("La cantidad de caracteres es " + caracteres + ". La cantidad de palabras es " + can_pal + ". La cantidad de oraciones es " + can_ora);  
+        }
+
+    </script>
+</body>
+</html>

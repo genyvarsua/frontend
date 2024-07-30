@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio_14</title>
+</head>
+<body>
+    <h1>Verificador de contraseñas</h1>
+    <label for="password">Ingresa tu contraseña</label>
+    <input type="password" id="password">
+    <br>
+    <br>
+    <button onclick="verificadorPassword()">Verificar</button>
+    <script>
+        //Verificador de contraseñas
+        function verificadorPassword() {
+            let errores = [];
+            const password = document.getElementById("password").value;
+
+            if(password.length < 8) {
+                errores.push("Debe tener al menos 8 caracteres de longitud.");
+            }
+
+            if(!/[A-Z]/.test(password)) {
+                errores.push("Debe contener al menos una letra mayúscula.");
+            }
+
+            if(!/[a-z]/.test(password)) {
+                errores.push("Debe contener al menos una letra minúscula.");
+            }
+
+            if(!/[0-9]/.test(password)) {
+                errores.push("Debe contener al menos un número.");
+            }
+
+            if(errores.length > 0) {
+                let mensaje = "La contraseña no cumple con los siguientes requisitos:\n";
+                errores.forEach(function(error) {
+                    mensaje += "- " + error + "\n";
+                });
+                alert(mensaje);
+            } else {
+                alert("Contraseña válida");
+            }
+        }
+    </script>
+</body>
+</html>

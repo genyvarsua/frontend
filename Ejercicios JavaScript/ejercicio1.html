@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Generador de nombre de usuarios
+        let name;
+        let lastname;
+        name = prompt("Ingrese su nombre");
+        lastname = prompt("Ingrese su apellido");
+        let nameAbr = name.substring(0,3);
+        let lastAbr = lastname.substring(0,3);
+        let nummax = 99;
+        let num = Math.floor(Math.random() * nummax);
+        let username;
+        username = nameAbr + lastAbr + num;
+        document.write("Su nombre de usurario es " + username.toLowerCase());
+    </script>
+</body>
+</html>

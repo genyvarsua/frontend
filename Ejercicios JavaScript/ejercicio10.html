@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LENGUAJE HACKER</title>
+</head>
+<body>
+    <h1>LENGUAJE HACKER (LEET)</h1>
+    <textarea id="texto" rows="5" cols="40" placeholder="Ingrese el texto aquí"></textarea><br>
+    <button onclick="transformarALeet()">Transformar</button>
+    <p id="resultado"></p>
+
+    <script>
+
+        const diccionarioLeet = {
+            'a': '4', 'b': '8', 'c': '<', 'd': '|)', 'e': '3', 'f': '|=', 'g': '9', 
+            'h': '|-|', 'i': '1', 'j': '_|', 'k': '|<', 'l': '|_', 'm': '|\/|', 
+            'n': '|\|', 'o': '0', 'p': '|*', 'q': '0_', 'r': '|2', 's': '5', 
+            't': '7', 'u': '|_|', 'v': '\/', 'w': '\/\/', 'x': '><', 'y': '`/', 
+            'z': '2', '0': '0', '1': '1', '2': '2', '3': '3', '4': '4', 
+            '5': '5', '6': '6', '7': '7', '8': '8', '9': '9'
+        };
+
+        function transformarALeet() {
+            let texto = document.getElementById('texto').value.toLowerCase();
+            let textoLeet = '';
+
+            for (let i = 0; i < texto.length; i++) {
+                let caracter = texto[i];
+                if (diccionarioLeet[caracter]) {
+                    textoLeet += diccionarioLeet[caracter];
+                } else {
+                    textoLeet += caracter; 
+                }
+            }
+
+            document.getElementById('resultado').textContent = textoLeet;
+        }
+    </script>
+</body>
+</html>

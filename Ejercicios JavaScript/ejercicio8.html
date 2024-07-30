@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Palindromos</title>
+</head>
+<body>
+    <h1>Verificador de Palindromos</h1>
+    <label for="cadena">Ingrese cadena de texto:</label>
+    <input type="text" id="cadena">
+    <br>
+    <br>
+    <button onclick="verificarPalindromo()">Verificar</button>
+
+    <script>
+        function verificarPalindromo() {
+            const cadena = document.getElementById("cadena").value;
+
+            const cadenaLimpia = cadena.toLowerCase().replace(/[^a-z0-9]/g,"");
+
+            const cadenaAlReves = cadenaLimpia.split('').reverse().join("");
+
+            if(cadenaLimpia == cadenaAlReves) {
+                alert("La cadena que ingresaste SI es palindroma");
+            }
+            else {
+                alert("La cadena que ingresaste NO es palindroma");
+            }
+
+        }
+    </script>
+</body>
+</html>

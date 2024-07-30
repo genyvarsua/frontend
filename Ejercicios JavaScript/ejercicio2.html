@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Calculadora de propinas
+        let total;
+        let porcentaje;
+        let propina;
+        let suma
+        total = parseFloat(prompt("Ingrese total de la cuenta"));
+        porcentaje = parseFloat(prompt("Ingrese porcentaje de la propina"));
+        propina = (total * porcentaje) / 100;
+        suma = total + propina;
+        document.write("El valor de la propina es $" + propina.toLocaleString()); 
+        document.write ("<br>");
+        document.write("La suma final a pagar es $" + suma.toLocaleString());
+    </script>
+</body>
+</html>

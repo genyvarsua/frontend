@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de idioma</title>
+</head>
+<body>
+    <h1>Detector de idioma</h1>
+    <label for="palabra">Ingrese una palabra:</label>
+    <input type="text" id="palabra">
+    <br><br>
+    <button onclick="detectarIdioma()">Verificar</button>
+    
+    <script>
+        function detectarIdioma() {
+            const palabra =document.getElementById("palabra").value.toLowerCase();
+
+            const vocalesConTilde = ["á","é","í","ó","ú"];
+            let contieneTilde = false;
+
+            for(let i = 0;i < palabra.length; i++) {
+                if(vocalesConTilde.includes(palabra[i])) {
+                    contieneTilde = true;
+                    break;
+                }
+            }
+
+            if(contieneTilde) {
+                alert("Es probable que la palabra esté en español");
+            } else {
+                alert("Es probable que la palabra esté en inglés");
+            }
+        }
+    </script>
+</body>
+</html>

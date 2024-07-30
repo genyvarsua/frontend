@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Establece el alto del body al 100% del viewport */
+            margin: 0; /* Elimina el margen predeterminado del body */
+        }
+
+        h1 {
+            text-align: center; /* Centra el texto del h1 */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="contador"></h1>
+    <script>
+        function cuentaAtras(inicio, intervalo) {
+            // Validar los parámetros
+            if (!Number.isInteger(inicio) || inicio <= 0 || !Number.isInteger(intervalo) || intervalo <= 0) {
+                console.error("Los parámetros deben ser números enteros positivos.");
+                return;
+            }
+
+            // Función recursiva para la cuenta atrás
+            function hacerCuentaAtras(num) {
+                document.getElementById("contador").innerHTML = num;
+                if (num > 0) {
+                    setTimeout(function() {
+                        hacerCuentaAtras(num - 1);
+                    }, intervalo * 1000); // Convertir segundos a milisegundos
+                }
+            }
+
+            // Iniciar la cuenta atrás
+            hacerCuentaAtras(inicio);
+        }
+
+        let comienza = parseInt(prompt("Ingrese lel número en el que comienza la cuenta (Recuerde que deben ser números enteros positivos)"));
+        let segundo = parseInt(prompt("Ingrese los segundos que tienen que transcurrir entre cada cuenta (Recuerde que deben ser números enteros positivos)."));
+        cuentaAtras(comienza, segundo);
+    </script>
+</body>
+</html>
